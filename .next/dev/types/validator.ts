@@ -36,10 +36,64 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
 }
 
 
+// Validate ../../../app/exercise/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/exercise">> = Specific
+  const handler = {} as typeof import("../../../app/exercise/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/food/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/food">> = Specific
+  const handler = {} as typeof import("../../../app/food/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/friends/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/friends">> = Specific
+  const handler = {} as typeof import("../../../app/friends/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../../app/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/">> = Specific
   const handler = {} as typeof import("../../../app/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/sleep/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/sleep">> = Specific
+  const handler = {} as typeof import("../../../app/sleep/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/water/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/water">> = Specific
+  const handler = {} as typeof import("../../../app/water/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/weight/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/weight">> = Specific
+  const handler = {} as typeof import("../../../app/weight/page.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check

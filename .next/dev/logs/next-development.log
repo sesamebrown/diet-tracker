@@ -1,3 +1,6 @@
-{"timestamp":"00:00:02.051","source":"Server","level":"LOG","message":"> [PWA] PWA support is disabled"}
-{"timestamp":"00:00:02.052","source":"Server","level":"LOG","message":"> [PWA] PWA support is disabled"}
-{"timestamp":"00:00:02.171","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:02.478","source":"Server","level":"LOG","message":"> [PWA] PWA support is disabled"}
+{"timestamp":"00:00:02.478","source":"Server","level":"LOG","message":"> [PWA] PWA support is disabled"}
+{"timestamp":"00:00:02.858","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:11.983","source":"Server","level":"ERROR","message":"(node:57972) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.\n(Use `node --trace-deprecation ...` to show where the warning was created)"}
+{"timestamp":"00:00:13.572","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:00:13.651","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
