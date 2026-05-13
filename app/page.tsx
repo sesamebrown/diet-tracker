@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Home() {
   const sections = [
     { name: "Weight", href: "/weight" },
-    { name: "Food", href: "/food" },
+    { name: "Meal", href: "/meal" },
     { name: "Water", href: "/water" },
     { name: "Exercise", href: "/exercise" },
     { name: "Sleep", href: "/sleep" },

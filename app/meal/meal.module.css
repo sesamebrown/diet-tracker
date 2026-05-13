@@ -1,0 +1,126 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.container {
+  width: 100%;
+  max-width: 28rem;
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 2rem;
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
+.description {
+  margin-bottom: 2rem;
+  color: #4b5563;
+}
+
+.formCard {
+  display: grid;
+  gap: 1rem;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  padding: 1rem;
+  text-align: left;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 0.75rem;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.fileInput {
+  width: 100%;
+}
+
+.button {
+  width: 100%;
+  border: 0;
+  border-radius: 0.5rem;
+  background: #3b82f6;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  transition: background-color 150ms ease;
+}
+
+.button:hover {
+  background: #2563eb;
+}
+
+.savedMealsSection {
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.savedMealsTitle {
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.savedMealsList {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.emptyState {
+  color: #6b7280;
+}
+
+.mealCard {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+}
+
+.mealName {
+  font-weight: 500;
+}
+
+.mealCalories {
+  color: #4b5563;
+  font-size: 0.875rem;
+}
+
+.mealLink {
+  color: #2563eb;
+  font-size: 0.875rem;
+  text-decoration: underline;
+}
+
+.mealImage {
+  margin-top: 0.5rem;
+  border-radius: 0.5rem;
+  max-width: 100%;
+  height: auto;
+}
+
+.backLink {
+  margin-top: 2rem;
+  display: inline-block;
+  border-radius: 0.5rem;
+  background: #6b7280;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  transition: background-color 150ms ease;
+  text-decoration: none;
+}
+
+.backLink:hover {
+  background: #4b5563;
+}
