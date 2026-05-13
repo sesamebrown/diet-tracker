@@ -45,6 +45,7 @@ body {
 
 .page-card--center {
   text-align: center;
+  margin: auto;
 }
 
 .page-card--left {
@@ -52,7 +53,7 @@ body {
 }
 
 .page-title {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   font-size: 2.25rem;
   font-weight: 700;
 }
@@ -129,6 +130,27 @@ body {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
+}
+
+.input {
+  background-color: white;
+  width: auto;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.form-button {
+  background-color: #0a0a0a;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.form-button:hover {
+  background-color: #4b5563;
 }
 
 .auth-layout {
@@ -243,4 +265,12 @@ body {
 
 .back-link:hover {
   background: #4b5563;
+}
+
+.weight-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: fit-content;
+  margin: auto;
 }
