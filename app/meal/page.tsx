@@ -4,8 +4,6 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { supabase } from "../../lib/supabase";
 
-import styles from "./meal.module.css";
-
 export default function MealPage() {
   const [meals, setMeals] = useState<any[]>([]);
   const [mealName, setMealName] = useState("");
@@ -74,18 +72,20 @@ export default function MealPage() {
   }, []);
 
   return (
-    <main className={styles.page}>
-      <div className={styles.container}>
-        <h1 className={styles.title}>Meal</h1>
-        <p className={styles.description}>Track your meals here</p>
+    <main className="page-shell page-shell--top">
+      <div className="page-card dashboard-layout page-card--left">
+        <div className="page-card--center">
+          <h1 className="page-title">Meal</h1>
+          <p className="page-description">Track your meals here</p>
+        </div>
 
-        <div className={styles.formCard}>
+        <div className="panel panel--left">
           <input
             type="text"
             placeholder="Meal name"
             value={mealName}
             onChange={(e) => setMealName(e.target.value)}
-            className={styles.input}
+            className="field"
           />
 
           <input
@@ -93,7 +93,7 @@ export default function MealPage() {
             placeholder="Calories"
             value={calories}
             onChange={(e) => setCalories(e.target.value)}
-            className={styles.input}
+            className="field"
           />
 
           <input
@@ -104,34 +104,34 @@ export default function MealPage() {
                 setImage(e.target.files[0]);
               }
             }}
-            className={styles.fileInput}
+            className="field field--file"
           />
 
           <button
             type="button"
             onClick={addMeal}
-            className={styles.button}
+            className="button button--primary"
           >
             Add Meal
           </button>
         </div>
 
-        <div className={styles.savedMealsSection}>
-          <h2 className={styles.savedMealsTitle}>Saved meals</h2>
-          <div className={styles.savedMealsList}>
+        <div>
+          <h2 className="section-heading">Saved meals</h2>
+          <div className="stack-list">
             {meals.length === 0 ? (
-              <p className={styles.emptyState}>No meals yet.</p>
+              <p className="empty-state">No meals yet.</p>
             ) : (
               meals.map((meal) => (
-                <div key={meal.id} className={styles.mealCard}>
-                  <p className={styles.mealName}>{meal.meal_name}</p>
-                  <p className={styles.mealCalories}>{meal.calories} calories</p>
+                <div key={meal.id} className="item-card">
+                  <p className="item-title">{meal.meal_name}</p>
+                  <p className="item-meta">{meal.calories} calories</p>
                   {meal.image_url ? (
                     <a
                       href={meal.image_url}
                       target="_blank"
                       rel="noreferrer"
-                      className={styles.mealLink}
+                      className="item-link"
                     >
                       View image
                     </a>
@@ -141,7 +141,7 @@ export default function MealPage() {
                     <img
                       src={meal.image_url}
                       alt="Meal"
-                      className={styles.mealImage}
+                      className="item-image"
                     />
                   )}
                 </div>
@@ -152,7 +152,7 @@ export default function MealPage() {
 
         <Link
           href="/"
-          className={styles.backLink}
+          className="back-link"
         >
           Back
         </Link>

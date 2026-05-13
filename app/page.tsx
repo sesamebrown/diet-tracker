@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { supabase } from '@/lib/supabase'
-import Link from "next/link";
+import Link from "next/link"
 
 
 export default function Home() {
@@ -10,6 +10,14 @@ export default function Home() {
   const [password, setPassword] = useState('')
   const [username, setUsername] = useState('')
   const [user, setUser] = useState<any | null>(null)
+  const sections = [
+    { name: 'Weight', href: '/weight', icon: '/window.svg' },
+    { name: 'Meal', href: '/meal', icon: '/file.svg' },
+    { name: 'Water', href: '/water', icon: '/globe.svg' },
+    { name: 'Exercise', href: '/exercise', icon: '/vercel.svg' },
+    { name: 'Sleep', href: '/sleep', icon: '/next.svg' },
+    { name: 'Friends', href: '/friends', icon: '/window.svg' },
+  ]
 
   useEffect(() => {
     checkUser()
@@ -72,81 +80,76 @@ export default function Home() {
 
   if (!user) {
     return (
-      <main className="p-6 max-w-sm mx-auto">
-        <h1 className="text-3xl font-bold mb-6">
-          Diet Tracker Login
-        </h1>
+      <main className="page-shell">
+        <div className="page-card auth-layout page-card--center">
+          <h1 className="page-title">Diet Tracker Login</h1>
 
-        <input
-          className="border p-2 w-full mb-2"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        
-        <input
-          className="border p-2 w-full mb-2"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+          <div className="auth-stack">
+            <input
+              className="field"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
 
-        <input
-          type="password"
-          className="border p-2 w-full mb-2"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+            <input
+              className="field"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
 
-        <button
-          className="bg-black text-white px-4 py-2 rounded mr-2"
-          onClick={signIn}
-        >
-          Login
-        </button>
+            <input
+              type="password"
+              className="field"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
 
-        <button
-          className="bg-gray-700 text-white px-4 py-2 rounded"
-          onClick={signUp}
-        >
-          Sign Up
-        </button>
+            <div className="button-row">
+              <button className="button button--primary" onClick={signIn}>
+                Login
+              </button>
+
+              <button className="button button--secondary" onClick={signUp}>
+                Sign Up
+              </button>
+            </div>
+          </div>
+        </div>
       </main>
     )
   }
 
   return (
-    <main className="p-6">
-      <h1 className="text-3xl font-bold">
-        Welcome {username}
-      </h1>
+    <main className="page-shell page-shell--top">
+      <div className="page-card dashboard-layout page-card--left">
+        <h1 className="page-title">Welcome {username}!</h1>
 
-      <button
-        className="mt-4 bg-red-500 text-white px-4 py-2 rounded"
-        onClick={signOut}
-      >
-        Logout
-      </button>
-      <div className="mt-6">
-        <div className="grid grid-cols-2 gap-4 max-w-md">
-          {[
-            { name: 'Weight', href: '/weight' },
-            { name: 'Meal', href: '/meal' },
-            { name: 'Water', href: '/water' },
-            { name: 'Exercise', href: '/exercise' },
-            { name: 'Sleep', href: '/sleep' },
-            { name: 'Friends', href: '/friends' },
-          ].map((section) => (
-            <Link
-              key={section.href}
-              href={section.href}
-              className="px-6 py-4 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition"
-            >
-              {section.name}
-            </Link>
-          ))}
+        <div>
+          <div className="section-grid">
+            {sections.map((section) => (
+              <Link
+                key={section.href}
+                href={section.href}
+                className="section-link"
+              >
+                <img
+                  src={"/images/phone.png"}
+                  alt=""
+                  aria-hidden="true"
+                  className="section-link__icon"
+                />
+                {section.name}
+              </Link>
+            ))}
+          </div>
         </div>
+
+        <button className="button button--danger" onClick={signOut}>
+          Logout
+        </button>
       </div>
     </main>
   )
