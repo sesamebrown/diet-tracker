@@ -274,3 +274,11 @@ body {
   width: fit-content;
   margin: auto;
 }
+
+.water-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: fit-content;
+  margin: auto;
+}
